@@ -1,0 +1,31 @@
+       <h2> Employee Creation </h2><br>
+
+		
+				
+       <div id="containerDiv" class="container-fluid" style="padding:0px">
+       
+       <div width="500px">
+					<font color="red">{{createEmpError}}</font>
+		</div>
+		
+        <form> 
+            <!--Name <input type="text" ng-model="name" />
+            <input type="submit" name="Create class"/>   <br>-->
+            
+            Name <input type="text" data-ng-model="name" /><br> <br>
+            Sex &nbsp&nbsp <input type="text" data-ng-model="sex" /> <br> <br>
+            
+            <button class="btn btn-primary" type="button" 
+						data-ng-click="submit()">CREATE</button>
+          
+          
+        <br/>
+        <br/>  
+        
+         <div ng-show = "result" >
+         	Successfully added employee with Id ::  {{result.id}} 
+     	  </div>
+  		
+        </form>
+        </div>
+        
