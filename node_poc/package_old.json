@@ -1,0 +1,8 @@
+{
+  "name": "node_poc",
+  "version": "0.1.0",
+  "description": "node_poc",
+  "main": "main.js",
+  "readmeFilename": "README.md"
+}
+
