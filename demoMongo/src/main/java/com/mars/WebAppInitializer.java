@@ -8,9 +8,6 @@ import javax.servlet.ServletException;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-/**
- * Copyright (c) 2016 IPC Systems, Inc. Created by Ratnesh Srivastava
- */
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer
 {
 

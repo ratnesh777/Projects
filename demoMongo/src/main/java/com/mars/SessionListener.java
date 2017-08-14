@@ -7,10 +7,6 @@ import org.apache.logging.log4j.LogManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Copyright (c) 2016 IPC Systems, Inc. Created by Ratnesh Srivastava
- */
-
 public class SessionListener implements HttpSessionListener
 {
 

@@ -1,4 +1,4 @@
-package com.mars.repository.entity;
+package com.mars.models;
 
 
 public enum UserStatus

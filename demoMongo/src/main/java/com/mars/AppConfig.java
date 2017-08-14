@@ -79,7 +79,7 @@ public class AppConfig
     public SimpleMailMessage configurePasswordResetMail() throws NamingException
     {
         SimpleMailMessage passwordResetMail = new SimpleMailMessage();
-        passwordResetMail.setFrom("cloudAdmin@ipc.com");
+        passwordResetMail.setFrom("cloudAdmin@mars.com");
         passwordResetMail.setSubject("Password Resets");
         return passwordResetMail;
     }
