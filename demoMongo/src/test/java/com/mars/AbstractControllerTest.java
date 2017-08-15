@@ -12,7 +12,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 @WebAppConfiguration
-@WithMockUser(roles = { "IPC Admin Operations User" }, username ="test@gmail.com")
+@WithMockUser(roles = { "Admin User" }, username ="test@gmail.com")
 public abstract class AbstractControllerTest extends AbstractSpringTest
 {
     @Autowired

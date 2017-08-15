@@ -10,10 +10,6 @@ import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
 
 import com.github.fakemongo.Fongo;
 
-/**
- * Copyright (c) 2016 IPC Systems, Inc. Created by Ratnesh Srivastava on 1/26/2017.
- */
-
 @Configuration
 @PropertySource("classpath:application.properties")
 public class SpringMongoConfigTest
