@@ -17,5 +17,5 @@ public interface UserRepository extends MongoRepository<User, String>//,QueryDsl
     
     List<User> findByAccountLocked(Boolean accountLocked);
     
-    List<User> findByStatus(String status);
+  
 }

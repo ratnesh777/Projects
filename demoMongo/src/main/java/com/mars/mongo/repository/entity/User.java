@@ -52,17 +52,11 @@ public class User implements UserDetails
 
     private String password;
 
-    private String status;
-
-    private String siteId;
-
     @NotNull
     private Role role;
 
  
     private Customer company;
-
-    private String locationId;
 
     private String passwordToken;
 
@@ -71,12 +65,6 @@ public class User implements UserDetails
     private boolean accountLocked;
 
     private String loginCount = "0";
-    
-    private String unigyVIP;
-    
-    
-    @JsonIgnore
-    private String pingId;
     
     private String productName;
 

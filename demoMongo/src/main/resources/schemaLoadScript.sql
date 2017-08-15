@@ -7,7 +7,6 @@ db.user.insert({"firstName" : "adminfirstname",
     "lastName" : "adminuserlastname",
     "email" : "admin@mars.com",
     "password" : "$2a$10$h4wDBlImGz.6SAIAu/QWaetvZqiWkMKb0LpSxJdV.UuesGZ8UWskG",
-    "status" : "REGISTERED",
      "role" : {
           "_id" : "1",
          "name" : "Admin Operations User"

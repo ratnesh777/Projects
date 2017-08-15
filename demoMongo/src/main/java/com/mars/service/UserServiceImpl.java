@@ -46,11 +46,6 @@ public class UserServiceImpl extends AbstractServiceImpl implements UserService
     @Autowired
     RoleRepository roleRepository;
     
-    //@Autowired
-   // UserDetailsService userDetailsService;
-    
- /*   @Value("${pingId.user.defaultPassword}")
-    String PING_USER_DEFAULT_PASSWORD ;*/
 
     @Override
     public User findById(String id)
@@ -99,7 +94,6 @@ public class UserServiceImpl extends AbstractServiceImpl implements UserService
         {
             validateComapnyAndProductAndSiteId(user);
             Customer customer = companyService.findCustomerById(user.getCompany() != null ? user.getCompany().getId() : null);
-			
 			Customer company= new Customer();
 			company.setId(customer.getId());
 			company.setName(customer.getName());
@@ -117,62 +111,13 @@ public class UserServiceImpl extends AbstractServiceImpl implements UserService
                     .addContextValue("email", user.getEmail());
         }
        
-        //PingUser pingUser = savePingUser(user, false);
-        
-        
-        user.setStatus(UserStatus.CREATED.name());
-      //  user.setPassword(BCrypt.hashpw(RandomStringUtils.randomAlphanumeric(16), BCrypt.gensalt()));
-   /*     if(!StringUtils.isEmpty(pingUser.getId())){
-        	user.setPingId(pingUser.getId());	
-        }*/
         User saveduser = userRepository.save(user);
             auditLog.info(
                     "User successfully created  a user " + saveduser.getId() + " with metadata");
             return hidePassword(saveduser);
     }
 
-   /* private PingUser savePingUser(User user, boolean updateRequest)
-    {
-        //create user in ping directory
-        PingUser pingUser = new PingUser();
-        //pingUser.setId("e430f490-7272-4ab2-afc9-3b53f9f3e358");
-        pingUser.setUserName(user.getEmail());
-      
-        PingName name = new PingName();
-        name.setFormatted(user.getFirstName() + " " + user.getLastName() );
-        name.setGivenName(user.getFirstName());
-        name.setFamilyName(user.getLastName());
-        pingUser.setName(name);
-        
-        HashMap mail = new HashMap();
-        mail.put("value",user.getEmail());
-        mail.put("type", "work");
-        ArrayList emails = new ArrayList();
-        emails.add(mail);
-//        PingMail emails = new PingMail();
-//        emails.setType("work");
-//        emails.setValue(user.getEmail());
-       pingUser.setEmails(emails);
-       
-       PingCustom customAttributes = new PingCustom();
-                
-        if(updateRequest){
-            pingUserService.findUserById(user.getPingId());
-            pingUser.setId(user.getPingId());
-            customAttributes.setUserState(user.getStatus());
-            pingUser.setCustomAttributes(customAttributes);
-            pingUser=pingUserService.updatePingUser(pingUser);  
-        }
-        else{
-            pingUser.setPassword(PING_USER_DEFAULT_PASSWORD);
-            customAttributes.setUserState(UserStatus.CREATED.name());
-            pingUser.setCustomAttributes(customAttributes);
-            pingUser=pingUserService.createPingUser(pingUser);    
-        }
-        // end
-        return pingUser;
-    }
-*/
+   
     private User hidePassword(User user)
     {
         if (user != null)
@@ -210,44 +155,17 @@ public class UserServiceImpl extends AbstractServiceImpl implements UserService
                     .addContextValue("email", user.getEmail());
         }
 
-        if(updateStatusForEmailInvite)
-        {
-            dbUser.setStatus(user.getStatus());
-        } 
         
-        if (dbUser.getStatus().equals(UserStatus.REGISTERED.name())
-                && !user.getEmail().equalsIgnoreCase(dbUser.getEmail()))
-        {
-            throw new PortalServiceParameterException(
-                    ErrorMessagesConstant.EMAIL_CAN_NOT_UPDATED_FOR_REGISTERED_STATUS)
-                            .addContextValue("email", user.getEmail());
-        }
-
+       
         if (user.getProductName() != null)
         {
             dbUser.setProductName(user.getProductName());
         }
         
-      /*  if (user.getCompany() != null && !customerAdminUserFlag)
-        {
-        	Customer company= new Customer();
-			company.setId(user.getCompany().getId());
-			company.setName(user.getCompany().getName());
-            dbUser.setCompany(company);
-        }
-
-        if(!customerAdminUserFlag)
-        {
-            dbUser.setEmail(user.getEmail());
-            dbUser.setFirstName(user.getFirstName());
-            dbUser.setLastName(user.getLastName());
-        }*/
+    
         if (dbUser.getRole().getId().equals("1") || dbUser.getRole().getId().equals("2")){
             removeProductsAndCustomer(dbUser);
         }
-        
-      /*  //ping directory update
-        PingUser pingUser = savePingUser(dbUser, true);*/
         
         dbUser = hidePassword(userRepository.save(dbUser));
         auditLog.info("User successfully edited a user " + dbUser.getId() + " with metadata");
