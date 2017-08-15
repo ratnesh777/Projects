@@ -2,10 +2,6 @@ package com.mars.error;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-/**
- * Copyright (c) 2016 IPC Systems, Inc. Created by Ratnesh Srivastava
- */
-
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class FieldErrorResource
 {

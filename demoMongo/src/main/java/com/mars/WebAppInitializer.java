@@ -1,5 +1,3 @@
-/* Copyright (C) 2016 IPC Systems, Inc. All rights reserved. */
-
 package com.mars;
 
 import javax.servlet.ServletContext;
