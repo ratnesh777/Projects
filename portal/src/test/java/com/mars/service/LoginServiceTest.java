@@ -74,7 +74,7 @@ public class LoginServiceTest extends AbstractTest {
 		thrown.expect(PortalAccessForbiddenException.class);
 		thrown.expectMessage(containsString(ErrorMessagesConstant.ACCESS_FORBIDDEN));
 		Login loginModel = getLoginModel();
-		loginModel.setEmailId("test@ipc.com");
+		loginModel.setEmailId("test@mars.com");
 		UserEntity userEntity = getEntity();
 		userEntity.setStatus(UserStatus.CREATED);
 		when(userRepository.findByEmail(loginModel.getEmailId())).thenReturn(userEntity);

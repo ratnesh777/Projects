@@ -96,7 +96,7 @@ public class BackRoomServiceImplTest extends AbstractTest
         thrown.expect(PortalServiceParameterException.class);
         thrown.expectMessage(containsString(DUPLICATE_BACK_ROOM_NAME_AND_COMPANY));
         thrown.expectMessage(containsString("[1:back room name=back room 1]"));
-        thrown.expectMessage(containsString("[2:company=Company(id=1001, name=IPC-TEST)]"));
+        thrown.expectMessage(containsString("[2:company=Company(id=1001, name=MARS-TEST)]"));
 
         when(companyService.findCompanyById("1001")).thenReturn(getCompanyModel());
         when(backRoomRepository.save(any(BackRoomEntity.class)))

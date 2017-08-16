@@ -40,7 +40,7 @@ public class BackRoomControllerTest extends AbstractControllerTest
                 .andExpect(jsonPath("$.voipProxyIP", is("13.33.33.33")))
                 .andExpect(jsonPath("$.company.*", hasSize(2)))
                 .andExpect(jsonPath("$.company.id", is("1001")))
-                .andExpect(jsonPath("$.company.name", is("IPC-TEST")));
+                .andExpect(jsonPath("$.company.name", is("MARS-TEST")));
 
         MockHttpServletResponse response = resultActions.andReturn().getResponse();
         String id = objectMapper.readValue(response.getContentAsByteArray(), BackRoom.class)
@@ -129,7 +129,7 @@ public class BackRoomControllerTest extends AbstractControllerTest
                 .andExpect(jsonPath("$.message", is("Back room name already exist in the company")))
                 .andExpect(jsonPath("$.errorContext", hasSize(2)))
                 .andExpect(jsonPath(getContextItem("back room name", "back room 1")).exists())
-                .andExpect(jsonPath(getContextItem("company", "Company(id=1001, name=IPC-TEST)"))
+                .andExpect(jsonPath(getContextItem("company", "Company(id=1001, name=MARS-TEST)"))
                         .exists());
     }
 
@@ -145,7 +145,7 @@ public class BackRoomControllerTest extends AbstractControllerTest
                 .andExpect(jsonPath("$.managementProxyIP", is("12.22.22.22")))
                 .andExpect(jsonPath("$.company.*", hasSize(2)))
                 .andExpect(jsonPath("$.company.id", is("1001")))
-                .andExpect(jsonPath("$.company.name", is("IPC-TEST")));
+                .andExpect(jsonPath("$.company.name", is("MARS-TEST")));
     }
 
     @Test
@@ -224,7 +224,7 @@ public class BackRoomControllerTest extends AbstractControllerTest
                 .andExpect(jsonPath("$.content[0].voipProxyIP", is("13.33.33.33")))
                 .andExpect(jsonPath("$.content[0].company.*", hasSize(2)))
                 .andExpect(jsonPath("$.content[0].company.id", is("1001")))
-                .andExpect(jsonPath("$.content[0].company.name", is("IPC-TEST")))
+                .andExpect(jsonPath("$.content[0].company.name", is("MARS-TEST")))
 
                 .andExpect(jsonPath("$.content[1].*", hasSize(6)))
                 .andExpect(jsonPath("$.content[1].id", is("2")))
@@ -260,7 +260,7 @@ public class BackRoomControllerTest extends AbstractControllerTest
                 .andExpect(jsonPath("$.content[0].voipProxyIP", is("13.33.33.33")))
                 .andExpect(jsonPath("$.content[0].company.*", hasSize(2)))
                 .andExpect(jsonPath("$.content[0].company.id", is("1001")))
-                .andExpect(jsonPath("$.content[0].company.name", is("IPC-TEST")))
+                .andExpect(jsonPath("$.content[0].company.name", is("MARS-TEST")))
 
                 .andExpect(jsonPath("$.content[1].*", hasSize(6)))
                 .andExpect(jsonPath("$.content[1].id", is("2")))
@@ -295,7 +295,7 @@ public class BackRoomControllerTest extends AbstractControllerTest
                 .andExpect(jsonPath("$.content[0].voipProxyIP", is("33.33.33.33")))
                 .andExpect(jsonPath("$.content[0].company.*", hasSize(2)))
                 .andExpect(jsonPath("$.content[0].company.id", is("1001")))
-                .andExpect(jsonPath("$.content[0].company.name", is("IPC-TEST")))
+                .andExpect(jsonPath("$.content[0].company.name", is("MARS-TEST")))
 
                 .andExpect(jsonPath("$.content[1].*", hasSize(6)))
                 .andExpect(jsonPath("$.content[1].id", is("2")))

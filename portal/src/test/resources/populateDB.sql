@@ -1,17 +1,17 @@
 ---role insert-----
-insert into role VALUES (1, 'IPC Operations'),
+insert into role VALUES (1, 'Operations'),
 (2, 'Manufacturing'),
 (3, 'Customer Admin'),
 (4, 'Customer End User');
 
 ---company insert-----
 insert into company VALUES (1000, 'some company');
-insert into company VALUES (1001, 'IPC-TEST');
+insert into company VALUES (1001, 'MARS-TEST');
 
 ---user insert-----
 INSERT INTO user (id, email, firstName, lastName, status, company_id, role_id, password, site_id)
-VALUES (1, 'test@ipc.com', 'FN1', 'LN', 'CREATED', 1000, 1, '$2a$10$bhe2VRUcV8ETXwWuLiXL8OuWpSjfrRDQ0CZkPeujp2igGVbfaDkgO', 'site id'), --password=WElcome12#
-(2, 'test2@ipc.com', 'FN3', 'LN', 'REGISTERED', 1001, 2, '$2a$10$bhe2VRUcV8ETXwWuLiXL8OuWpSjfrRDQ0CZkPeujp2igGVbfaDkgO', 'site id2'), --password=WElcome12#
+VALUES (1, 'test@mars.com', 'FN1', 'LN', 'CREATED', 1000, 1, '$2a$10$bhe2VRUcV8ETXwWuLiXL8OuWpSjfrRDQ0CZkPeujp2igGVbfaDkgO', 'site id'), --password=WElcome12#
+(2, 'test2@mars.com', 'FN3', 'LN', 'REGISTERED', 1001, 2, '$2a$10$bhe2VRUcV8ETXwWuLiXL8OuWpSjfrRDQ0CZkPeujp2igGVbfaDkgO', 'site id2'), --password=WElcome12#
  (3, 'test@gmail.com', 'FN2', 'LN', 'REGISTERED', 1000, 1, '$2a$10$bhe2VRUcV8ETXwWuLiXL8OuWpSjfrRDQ0CZkPeujp2igGVbfaDkgO', 'site id'); --password=WElcome12#
 
 INSERT INTO back_room (id, home_zone_ip, management_proxy_ip, name, voip_proxy_ip, company_id) VALUES

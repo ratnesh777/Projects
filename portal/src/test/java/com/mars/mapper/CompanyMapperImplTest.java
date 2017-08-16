@@ -49,7 +49,7 @@ public class CompanyMapperImplTest{
     {
     	CompanyEntity companyEntity = new CompanyEntity();
     	companyEntity.setId(1001);
-    	companyEntity.setName("IPC-TEST");
+    	companyEntity.setName("MARS-TEST");
         return companyEntity;
 
     }
@@ -58,7 +58,7 @@ public class CompanyMapperImplTest{
     {
     	Company company = new Company();
     	company.setId("1001");
-    	company.setName("IPC-TEST");
+    	company.setName("MARS-TEST");
         return company;
     }
 

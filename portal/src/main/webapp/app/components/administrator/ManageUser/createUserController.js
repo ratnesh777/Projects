@@ -15,11 +15,11 @@
         cuc.roles = [
             {
                 id: "1",
-                name: "IPC Operations"
+                name: "Admin"
             },
             {
                 id: "4",
-                name: "Customer End User"
+                name: "Customer User"
             }
         ];
 

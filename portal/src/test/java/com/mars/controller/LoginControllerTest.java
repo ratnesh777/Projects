@@ -72,7 +72,7 @@ public class LoginControllerTest extends AbstractControllerTest
 	@Test
 	public void shouldReturnForbiddenErrorWhenUserIdStatusIsNotRegistered() throws Exception {
 		Login loginModel = getLoginModel();
-		loginModel.setEmailId("test@ipc.com");
+		loginModel.setEmailId("test@mars.com");
 		
 		mockMvc.perform(MockMvcRequestBuilders.post(APIUtilConstant.LOGIN_API_END_POINT+"/authenticate")
                 .content(objectMapper.writeValueAsString(loginModel)).accept(MediaType.APPLICATION_JSON)
@@ -84,7 +84,7 @@ public class LoginControllerTest extends AbstractControllerTest
 	@Test
 	public void shouldSendEmailTouser() throws Exception {
 		mockMvc.perform(MockMvcRequestBuilders.post(APIUtilConstant.LOGIN_API_END_POINT+"/sendEmail")
-                .content(objectMapper.writeValueAsString("test@ipc.com")).accept(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString("test@mars.com")).accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON)).andDo(print()).andExpect(status().isOk());
 	}
 

@@ -2,7 +2,7 @@
     'use strict';
     var configPrefixTitle = {
         appErrorPrefix: '[Application Error] ',
-        appTitle: 'IPC [change in logger/toastr.config.js]'
+        appTitle: 'Mars [change in logger/toastr.config.js]'
     };
     
     angular.module('exception')
@@ -11,7 +11,7 @@
             * @ngdoc value
             * @memberof exception
             * @prop {object} config.appErrorPrefix [Application Error]
-            * @prop {object} config.appTitle IPC [change in logger/toastr.config.js]
+            * @prop {object} config.appTitle MARS [change in logger/toastr.config.js]
             */
            .value('config', configPrefixTitle)
            .config(toastrConfiguration)

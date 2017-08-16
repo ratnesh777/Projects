@@ -19,7 +19,7 @@
             * @prop {Boolean} themeID unused
             * @prop {string} navbarHeaderColor 'bg-primary', 'bg-success', 'bg-warning', etc.
             * @prop {string} logo 'bg-primary', 'bg-success', 'bg-warning', etc.
-            * @prop {string} logoSrc url - '/images/ipc-logo.png'
+            * @prop {string} logoSrc url - '/images/-logo.png'
             * @prop {string} asideColor 'bg-dark', 'bg-light'
             * @prop {object} color.primary "#248AAF"
             * @prop {object} color.success "#3CBC8D"
@@ -41,7 +41,7 @@
             fullScreenMode: false, //
             navCollapsedMin: false, //
             navbarHeaderColor: 'bg-primary',
-            logoSrc: '/portal/app/img/ipc_new_logo.png',
+            logoSrc: '/portal/app/img/company_logo.png',
             sideNavColor: 'bg-primary',
             color: {
                 primary: "#248AAF",

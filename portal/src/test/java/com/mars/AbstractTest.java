@@ -34,7 +34,7 @@ public abstract class AbstractTest
         model.setId("1");
         model.setFirstName("FN");
         model.setLastName("LN");
-        model.setEmail("test@ipc.com");
+        model.setEmail("test@mars.com");
         model.setStatus(UserStatus.ACTIVATED);
         Role roleModel = new Role();
         roleModel.setId("2");
@@ -55,7 +55,7 @@ public abstract class AbstractTest
         entity.setId(1);
         entity.setFirstName("FN");
         entity.setLastName("LN");
-        entity.setEmail("test@ipc.com");
+        entity.setEmail("test@mars.com");
         entity.setStatus(UserStatus.ACTIVATED);
         RoleEntity roleEntity = new RoleEntity();
         roleEntity.setId(2);
@@ -74,7 +74,7 @@ public abstract class AbstractTest
     {
         Company company = new Company();
         company.setId("1001");
-        company.setName("IPC-TEST");
+        company.setName("MARS-TEST");
         return company;
     }
 
@@ -82,7 +82,7 @@ public abstract class AbstractTest
     {
         CompanyEntity companyEntity = new CompanyEntity();
         companyEntity.setId(1001);
-        companyEntity.setName("IPC-TEST");
+        companyEntity.setName("MARS-TEST");
         return companyEntity;
     }
 
@@ -99,7 +99,7 @@ public abstract class AbstractTest
         UserEntity userEntity = new UserEntity();
         RoleEntity roleEntity = new RoleEntity();
         roleEntity.setId(1);
-        roleEntity.setName("IPC Operations");
+        roleEntity.setName("Operations");
         userEntity.setRole(roleEntity);
         userEntity.setPassword("$2a$10$bhe2VRUcV8ETXwWuLiXL8OuWpSjfrRDQ0CZkPeujp2igGVbfaDkgO");
         userEntity.setStatus(UserStatus.REGISTERED);

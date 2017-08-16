@@ -3790,7 +3790,7 @@ fieldset.scheduler-border-sync {
    display: block;
 }
 
-.ipcCustomerPortal:hover {
+.customerPortal:hover {
   background-color: #591d77 !important;
   color: white !important; 
 }

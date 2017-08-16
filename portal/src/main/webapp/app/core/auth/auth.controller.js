@@ -32,9 +32,9 @@
         self.messages = {
             200: 'Logged in. Welcome!',
             401: 'Email and password do not match',
-            403: 'Not a registered user, please register or contact IPC administrator.',
+            403: 'Not a registered user, please register or contact administrator.',
             422: 'Email and pasword are mandatory fields.',
-            423: 'Your account has been locked. To unlock contact IPC administrator.',
+            423: 'Your account has been locked. To unlock contact administrator.',
             500: 'Email and password do not match'
         };
         self.currentUser = {};

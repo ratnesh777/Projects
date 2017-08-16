@@ -32,7 +32,7 @@ public class CompanyControllerTest extends AbstractControllerTest
 	public void shouldReturnCompanyDetailWhenValidInputsPassedInRequest() throws Exception {
 
 		Company company = new Company();
-		company.setName("IPC POLICY");
+		company.setName("MARS POLICY");
 
 		MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.post(APIUtilConstant.COMPANY_API_END_POINT)
                  .content(objectMapper.writeValueAsString(company)).accept(MediaType.APPLICATION_JSON)
@@ -62,7 +62,7 @@ public class CompanyControllerTest extends AbstractControllerTest
 				.andDo(print())
 				.andExpect(status().isOk())
 				.andExpect(jsonPath("$.id", is("1001")))
-				.andExpect(jsonPath("$.name", is("IPC-TEST")));
+				.andExpect(jsonPath("$.name", is("MARS-TEST")));
 	}
 	
 	@Test
@@ -99,7 +99,7 @@ public class CompanyControllerTest extends AbstractControllerTest
 				.andExpect(jsonPath("$.content[0].name", is("some company")))
 				
 				.andExpect(jsonPath("$.content[1].id", is("1001")))
-				.andExpect(jsonPath("$.content[1].name", is("IPC-TEST")));
+				.andExpect(jsonPath("$.content[1].name", is("MARS-TEST")));
 	}
 	
 	@Test
@@ -142,7 +142,7 @@ public class CompanyControllerTest extends AbstractControllerTest
 		.andExpect(jsonPath("$.content", hasSize(1)))
 		
 		.andExpect(jsonPath("$.content[0].id", is("1001")))
-		.andExpect(jsonPath("$.content[0].name", is("IPC-TEST")));
+		.andExpect(jsonPath("$.content[0].name", is("MARS-TEST")));
 	}
 	
 	@Test
@@ -157,7 +157,7 @@ public class CompanyControllerTest extends AbstractControllerTest
 		.andExpect(jsonPath("$.content", hasSize(1)))
 		
 		.andExpect(jsonPath("$.content[0].id", is("1001")))
-		.andExpect(jsonPath("$.content[0].name", is("IPC-TEST")));
+		.andExpect(jsonPath("$.content[0].name", is("MARS-TEST")));
 	}
 	
 	

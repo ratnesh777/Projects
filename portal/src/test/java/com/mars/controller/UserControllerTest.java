@@ -107,7 +107,7 @@ public class UserControllerTest extends AbstractControllerTest
                 .andExpect(jsonPath("$.code", is("Parameters passed in the request is invalid.")))
                 .andExpect(jsonPath("$.message", is("User email already exist")))
                 .andExpect(jsonPath("$.errorContext", hasSize(1)))
-                .andExpect(jsonPath(getContextItem("email", "test@ipc.com")).exists());
+                .andExpect(jsonPath(getContextItem("email", "test@mars.com")).exists());
     }
 
     @Test
@@ -132,12 +132,12 @@ public class UserControllerTest extends AbstractControllerTest
                 .andExpect(jsonPath("$.*", hasSize(8))).andExpect(jsonPath("$.id", is("1")))
                 .andExpect(jsonPath("$.firstName", is("FN1")))
                 .andExpect(jsonPath("$.lastName", is("LN")))
-                .andExpect(jsonPath("$.email", is("test@ipc.com")))
+                .andExpect(jsonPath("$.email", is("test@mars.com")))
                 .andExpect(jsonPath("$.status", is("CREATED")))
                 .andExpect(jsonPath("$.siteId", is("site id")))
                 .andExpect(jsonPath("$.role.*", hasSize(2)))
                 .andExpect(jsonPath("$.role.id", is("1")))
-                .andExpect(jsonPath("$.role.name", is("IPC Operations")))
+                .andExpect(jsonPath("$.role.name", is("Operations")))
                 .andExpect(jsonPath("$.company.*", hasSize(2)))
                 .andExpect(jsonPath("$.company.id", is("1000")))
                 .andExpect(jsonPath("$.company.name", is("some company")));
@@ -216,12 +216,12 @@ public class UserControllerTest extends AbstractControllerTest
                 .andExpect(jsonPath("$.content[0].id", is("1")))
                 .andExpect(jsonPath("$.content[0].firstName", is("FN1")))
                 .andExpect(jsonPath("$.content[0].lastName", is("LN")))
-                .andExpect(jsonPath("$.content[0].email", is("test@ipc.com")))
+                .andExpect(jsonPath("$.content[0].email", is("test@mars.com")))
                 .andExpect(jsonPath("$.content[0].status", is("CREATED")))
                 .andExpect(jsonPath("$.content[0].siteId", is("site id")))
                 .andExpect(jsonPath("$.content[0].role.*", hasSize(2)))
                 .andExpect(jsonPath("$.content[0].role.id", is("1")))
-                .andExpect(jsonPath("$.content[0].role.name", is("IPC Operations")))
+                .andExpect(jsonPath("$.content[0].role.name", is("Operations")))
                 .andExpect(jsonPath("$.content[0].company.*", hasSize(2)))
                 .andExpect(jsonPath("$.content[0].company.id", is("1000")))
                 .andExpect(jsonPath("$.content[0].company.name", is("some company")))
@@ -235,7 +235,7 @@ public class UserControllerTest extends AbstractControllerTest
                 .andExpect(jsonPath("$.content[1].siteId", is("site id")))
                 .andExpect(jsonPath("$.content[1].role.*", hasSize(2)))
                 .andExpect(jsonPath("$.content[1].role.id", is("1")))
-                .andExpect(jsonPath("$.content[1].role.name", is("IPC Operations")))
+                .andExpect(jsonPath("$.content[1].role.name", is("Operations")))
                 .andExpect(jsonPath("$.content[1].company.*", hasSize(2)))
                 .andExpect(jsonPath("$.content[1].company.id", is("1000")))
                 .andExpect(jsonPath("$.content[1].company.name", is("some company")));
@@ -260,12 +260,12 @@ public class UserControllerTest extends AbstractControllerTest
                 .andExpect(jsonPath("$.content[0].id", is("1")))
                 .andExpect(jsonPath("$.content[0].firstName", is("FN1")))
                 .andExpect(jsonPath("$.content[0].lastName", is("LN")))
-                .andExpect(jsonPath("$.content[0].email", is("test@ipc.com")))
+                .andExpect(jsonPath("$.content[0].email", is("test@mars.com")))
                 .andExpect(jsonPath("$.content[0].status", is("CREATED")))
                 .andExpect(jsonPath("$.content[0].siteId", is("site id")))
                 .andExpect(jsonPath("$.content[0].role.*", hasSize(2)))
                 .andExpect(jsonPath("$.content[0].role.id", is("1")))
-                .andExpect(jsonPath("$.content[0].role.name", is("IPC Operations")))
+                .andExpect(jsonPath("$.content[0].role.name", is("Operations")))
                 .andExpect(jsonPath("$.content[0].company.*", hasSize(2)))
                 .andExpect(jsonPath("$.content[0].company.id", is("1000")))
                 .andExpect(jsonPath("$.content[0].company.name", is("some company")))
@@ -279,7 +279,7 @@ public class UserControllerTest extends AbstractControllerTest
                 .andExpect(jsonPath("$.content[1].siteId", is("site id")))
                 .andExpect(jsonPath("$.content[1].role.*", hasSize(2)))
                 .andExpect(jsonPath("$.content[1].role.id", is("1")))
-                .andExpect(jsonPath("$.content[1].role.name", is("IPC Operations")))
+                .andExpect(jsonPath("$.content[1].role.name", is("Operations")))
                 .andExpect(jsonPath("$.content[1].company.*", hasSize(2)))
                 .andExpect(jsonPath("$.content[1].company.id", is("1000")))
                 .andExpect(jsonPath("$.content[1].company.name", is("some company")));
@@ -303,7 +303,7 @@ public class UserControllerTest extends AbstractControllerTest
                 .andExpect(jsonPath("$.content[0].id", is("2")))
                 .andExpect(jsonPath("$.content[0].firstName", is("FN3")))
                 .andExpect(jsonPath("$.content[0].lastName", is("LN")))
-                .andExpect(jsonPath("$.content[0].email", is("test2@ipc.com")))
+                .andExpect(jsonPath("$.content[0].email", is("test2@mars.com")))
                 .andExpect(jsonPath("$.content[0].status", is("REGISTERED")))
                 .andExpect(jsonPath("$.content[0].siteId", is("site id2")))
                 .andExpect(jsonPath("$.content[0].role.*", hasSize(2)))
@@ -311,7 +311,7 @@ public class UserControllerTest extends AbstractControllerTest
                 .andExpect(jsonPath("$.content[0].role.name", is("Manufacturing")))
                 .andExpect(jsonPath("$.content[0].company.*", hasSize(2)))
                 .andExpect(jsonPath("$.content[0].company.id", is("1001")))
-                .andExpect(jsonPath("$.content[0].company.name", is("IPC-TEST")))
+                .andExpect(jsonPath("$.content[0].company.name", is("MARS-TEST")))
 
                 .andExpect(jsonPath("$.content[1].*", hasSize(8)))
                 .andExpect(jsonPath("$.content[1].id", is("3")))
@@ -322,7 +322,7 @@ public class UserControllerTest extends AbstractControllerTest
                 .andExpect(jsonPath("$.content[1].siteId", is("site id")))
                 .andExpect(jsonPath("$.content[1].role.*", hasSize(2)))
                 .andExpect(jsonPath("$.content[1].role.id", is("1")))
-                .andExpect(jsonPath("$.content[1].role.name", is("IPC Operations")))
+                .andExpect(jsonPath("$.content[1].role.name", is("Operations")))
                 .andExpect(jsonPath("$.content[1].company.*", hasSize(2)))
                 .andExpect(jsonPath("$.content[1].company.id", is("1000")))
                 .andExpect(jsonPath("$.content[1].company.name", is("some company")));
