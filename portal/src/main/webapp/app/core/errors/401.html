@@ -1,0 +1,12 @@
+<!-- <page-header icon="fa fa-exclamation" title="Not Authorized" breadcrumbs=""></page-header> -->
+<div class="error-full-page">
+  <div class="col-sm-12 page-error pad-30">
+    <div class="error-details col-sm-6 col-sm-offset-3">
+      <h3 ng-show="loggedIn">You are logged in, but are not authorized to use this application feature.</h3>
+      <h3 ng-show="!loggedIn">You must log in and have the correct access level to use this application feature.</h3>
+      <p>If you believe this is incorrect (you should be authorized), please contact that application manager.<br>
+        <a ui-sref="Dashbord" class="btn btn-danger btn-return"> <i class="fa fa-home"> </i> Return </a>
+      </p>
+    </div>
+  </div>
+</div>

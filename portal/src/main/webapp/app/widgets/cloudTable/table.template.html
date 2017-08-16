@@ -1,0 +1,27 @@
+	
+	<div ui-grid="tableCtrl.gridOptions"
+		class="grid table table-striped table-bordered">
+		<div class="grid-msg-overlay" ng-if="tableCtrl.loading">
+			<div class="msg">
+				<span> Loading Data</i>
+				</span>
+			</div>
+		</div>
+		<div class="grid-msg-overlay"
+			ng-hide="tableCtrl.loading || tableCtrl.gridOptions.data.length">
+			<div class="msg">
+				<span>No Records Found</span>
+			</div>
+		</div>
+		<!-- <div class="goToPageGrid" ng-if="tableCtrl.gridOptions.enablePagination" ng-show="tableCtrl.gridOptions.enablePaginationControls">
+				<input type="number" ng-model="tableCtrl.pageNumber" ng-min="1" ng-max="tableCtrl.totalPages" /> <input type="button" value="Go" ng-click="tableCtrl.goToPage()">
+				<input class="form-control" style="height: 26px;margin-right: 2%;" id="pageNum"
+					ng-pattern="/^[0-9]*$/" name="pageNumber"
+					ng-keypress="tableCtrl.keypress($event)"
+					uib-popover="{{tableCtrl.gridOptions.appScopeProvider.invalidPageMsg}}" popover-placement="top-right"
+					popover-is-open="tableCtrl.isOpen"
+					ng-class="{errorColor: tableCtrl.gridOptions.appScopeProvider.invalidPageMsg != '' && tableCtrl.gridOptions.appScopeProvider.invalidPageMsg != undefined }"
+					ng-model="tableCtrl.gridOptions.appScopeProvider.pageNumber" min="1" max="tableCtrl.totalPages">
+				<button class="form-control buttonDefault" style="width: 30px;height: 26px;" ng-click="tableCtrl.goToPage()" ng-blur="tableCtrl.gridOptions.appScopeProvider.invalidPageMsg='';tableCtrl.gridOptions.appScopeProvider.pageNumber=''">Go</button>
+		</div> -->
+	</div>

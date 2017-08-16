@@ -1,0 +1,67 @@
+<div class="ng-cloak rightContentMain" style="margin-top:70px">
+	<div class="rightContentHeader">
+	    <label 	class="pull-left" style="margin-right: 1%">Manage Users </label>
+	    <a ui-sref="createUser">
+  			<button class="btn btn-info pull-right" id="addUser"  ng-click="">Add User</button>
+  		</a>
+  			
+  	<!-- 	<button class="btn btn-success btn-sm pull-right" style="height: 30px; width: 85px; padding: 4px 15px; font-size: 15px;"
+			ng-click="muc.addUser"  id="addUser">Add User</button> -->
+  		
+  		
+		<div class="pull-right policyMgAlert"
+			ng-show="muc.alerts.length > 0">
+			<uib-alert ng-repeat="alert in muc.alerts"
+				id="administrationAlerts" type="{{alert.type}}">{{alert.msg}}
+			</uib-alert>
+		</div>
+	</div>
+	<div class="rightContentNoFooterContainer">
+		<div class="tblPaginationHeader">
+		
+			<div class="pull-right schemaSearchIcon "
+				ng-show="muc.gridOptions.totalRecords > 0">
+				
+				<input type="text" ng-model="muc.searchKey" id="mucSearch"
+					class="form-control" ng-focus="muc.showSearchGlyphicon=false"
+					ng-blur="muc.showSearchGlyphicon=true" placeholder="Search">
+					
+				<i ng-if="muc.showSearchGlyphicon==true"
+					class="glyphicon glyphicon-search"></i>
+			</div>
+			
+			<div class="col-md-2.8 pull-right ">
+				<button class="btn btn-primary-spacing " id="inviteUser"  ng-click="" ng-disabled="muc.selectedRows.length  == 0">Invite</button>
+				<button class="btn btn-primary-spacing " id="deactivateUser"  ng-click="" ng-disabled="muc.selectedRows.length  == 0">Deactivate</button>
+				<button class="btn btn-primary-spacing" id="editUser"  ng-click="" ng-disabled="muc.selectedRows.length  == 0">Edit</button>
+			</div>
+
+			<div class="selectionMsgDev " ng-show="muc.selectedRows.length">
+
+				<label id="multiPgSelectionLbl"
+					ng-show="!muc.isAllRecordSelected && muc.selectedRows.length!=0 && (muc.selectedRows.length != muc.gridOptions.totalRecords)">
+					{{muc.selectedRows.length}} /
+					{{muc.gridOptions.totalItems}} items are selected. <a
+					ng-click="muc.makeAllRecordSelection()"> Select all items
+				</a> | <a ng-click="muc.clearAllSelection()">Clear Selection</a>
+				</label> <label id="allRecordsSelectionLbl"
+					ng-show="muc.isAllRecordSelected || muc.selectedRows.length == muc.gridOptions.totalRecords">All
+					entries are selected <a ng-click="muc.clearAllSelection()">Clear
+						Selection</a>
+				</label>
+
+			</div>
+		</div>
+		<div class="tblPaginationContainer">
+			<cloud-table dataurl="{{muc.tableDataUrl}}"
+				selected-ids="muc.selectedRows"
+				setup-table="muc.setUpUiGrid(preData)" search="{{muc.search}}"
+				table-options="muc.gridOptions"
+				is-all-record-selected="muc.isAllRecordSelected"
+				table-features="ui-grid-selection,ui-grid-pagination"
+				refresh="muc.tableRefresh"> </cloud-table>
+
+
+		</div>
+	</div>
+</div>

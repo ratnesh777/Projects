@@ -1,0 +1,16 @@
+<div class="error-full-page">
+  <div class="col-sm-12 page-error pad-30">
+    <div class="error-number text-danger col-sm-6 col-sm-offset-3"> No UI Router State Found for state: <span class="text-success">{{missingState}}</span></div>
+      <br/><br/>
+      <div class="error-details col-sm-6 col-sm-offset-3">
+      <h3> To the Developer:</h3>
+        <p>You've arrived here because you've placed a ui-sref in an anchor tag but no state was found with that name.</p>
+        <p ng-show="foundUpper">A state was found with an <b>upper case</b> version of <b>{{missingState}}</b>...capitalization problem?</p>
+        <p ng-show="foundLower">A state was found with a <b>lower case</b> version of <b>{{missingState}}</b>...capitalization problem?</p>
+      <p>This likely means you've forgotten to create or made an error in the state configuration for the {{missingState}} state. <br>
+        Check the state name you placed in the ui-sref attribute for any mistakes or add the state configuration and try again. <br><br><br>
+        <a ui-sref="/" class="btn btn-danger btn-return"> <i class="fa fa-home"> </i> Return </a>
+      </p>
+    </div>
+  </div>
+</div>

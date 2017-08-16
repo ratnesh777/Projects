@@ -1,0 +1,111 @@
+<div class="ng-cloak rightContentMain">
+    <div class="rightContentHeader">
+        <h3>Add Users</h3>
+
+        <div class="pull-right policyMgAlert"
+             ng-show="cuc.alerts.length > 0">
+            <uib-alert ng-repeat="alert in cuc.alerts"
+                       id="administrationAlerts" type="{{alert.type}}" close="cuc.closeAlert($index)">{{alert.msg}}
+            </uib-alert>
+        </div>
+    </div>
+    <div class="col-sm-12">
+        <form name="cuc.createUserForm" class="form-horizontal">
+
+            <div class="row form-group">
+                <div class="col-md-5 col-md-offset-1 formHeader">
+                    <h5>Personal Information</h5>
+                </div>
+                <div class="col-md-5 col-md-offset-1 formHeader">
+                    <h5>Lorem Ipsum</h5>
+                </div>
+            </div>
+
+
+            <div class="row form-group">
+                <label for="roleGRP" class="col-md-2 control-label wrapword required">Role</label>
+                <div class="col-md-4" id="roleGRP">
+                    <div ng-repeat="role in cuc.roles">
+                        <input type="radio" name="role" ng-model="cuc.user.role" ng-value='role'
+                               ng-change="cuc.roleChanged()" required>{{role.name}}
+                    </div>
+                </div>
+                <label for="siteId" class="col-md-2 control-label wrapword required"
+                       id="siteIdLabel">Site ID</label>
+                <div class="col-md-4">
+                    <input class="form-control" type="text" id="siteId" maxlength="150"
+                           value="{{cuc.user.siteId}}" ng-model="cuc.user.siteId" placeholder="SiteId"
+                           ng-required="true" ng-disabled="cuc.user.role.id==1">
+                </div>
+
+            </div>
+
+            <div class="row form-group">
+                <label for="firstName" class="col-md-2 control-label wrapword required"
+                       id="firstNameLabel">First Name</label>
+                <div class="col-md-4">
+                    <input class="form-control" type="text" id="firstName" maxlength="150"
+                           value="{{cuc.user.firstName}}" ng-model="cuc.user.firstName" placeholder="First Name"
+                           ng-required="true">
+                </div>
+                <label for="backroom" class="col-md-2 control-label wrapword"
+                       id="backroomLabel">Back Room</label>
+                <div class="col-md-4">
+                    <input class="form-control" type="text" id="backroom" maxlength="150"
+                           value="{{cuc.user.backroom}}" ng-model="cuc.user.backroom" placeholder="backroom"
+                           ng-required="false" ng-disabled="cuc.user.role.id==1">
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="lastName" class="col-md-2 control-label wrapword required" id="lastNameLabel">
+                    Last Name</label>
+                <div class="col-md-4">
+                    <input class="form-control" type="text" id="lastName" maxlength="150"
+                           value="{{cuc.user.lastName}}" ng-model="cuc.user.lastName" placeholder="Last Name"
+                           ng-required="true">
+                </div>
+                <label for="product" class="col-md-2 control-label wrapword required"
+                       id="productLabel">Product</label>
+                <div class="col-md-4">
+                    <input class="form-control" type="text" id="product" maxlength="150"
+                           value="{{cuc.user.product}}" ng-model="cuc.user.product" placeholder="product"
+                           ng-required="cuc.user.role.id!=1" ng-disabled="cuc.user.role.id==1">
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="email" class="col-md-2 control-label wrapword required"
+                       id="emailLabel">Email</label>
+                <div class="col-md-4">
+                    <input class="form-control" type="email" id="email" maxlength="150"
+                           value="{{cuc.user.email}}" ng-model="cuc.user.email" placeholder="Email"
+                           ng-required="true">
+                </div>
+                <label for="company" class="col-md-2 control-label wrapword required"
+                       id="companyLabel">Company</label>
+                <div class="col-md-4">
+                    <ui-select ng-required="true" ng-model="cuc.user.company" theme="bootstrap" id="company"
+                               ng-disabled="cuc.user.role.id==1">
+                        <ui-select-match placeholder="Select or search company in the list...">{{$select.selected.name}}
+                        </ui-select-match>
+                        <ui-select-choices repeat="item in cuc.companies | filter: $select.search">
+                            <div ng-bind-html="item.name | highlight: $select.search"></div>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+            </div>
+
+            <div class="row justify-content-center form-group">
+                <div class="col-md-2 justify-content-center">
+                    <button class="btn btn-success" id="createUser"
+                            ng-disabled="cuc.createUserForm.$invalid || cuc.createUserForm.$pristine"
+                            ng-click="cuc.createUser()">Save
+                    </button>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+</div>

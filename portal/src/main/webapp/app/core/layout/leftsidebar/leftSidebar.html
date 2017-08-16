@@ -1,0 +1,56 @@
+<script type="text/ng-template" id="group-template.html">
+    <div>
+        <div>
+            <div class="accordion-toggle"
+                 ng-click="isOpen = !isOpen"
+                 uib-accordion-transclude="heading">
+                <small><span class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isOpen, 'glyphicon-chevron-right': !isOpen}"></span></small>
+                <div uib-accordion-header></div>
+            </div>
+        </div>
+        <div class="panel-collapse collapse" uib-collapse="!isOpen">
+            <div>
+                <ul class="list-group" ng-transclude>
+                </ul>
+            </div>
+        </div>
+    </div>
+</script>
+<div class="nav">
+   <a  href="javascript:void(0)" >
+       <!--  <div class="logo">
+            <img style="height:75px; width:75px;margin-left:28%;margin-top: 15%" src="/portal/app/img/company_logo.png"/>
+        </div> -->
+    </a>
+    <uib-accordion close-others="true">
+        <div ng-repeat="menuGroup in left.menus" style="margin-top: 15%">
+           <div ng-if="app.role.matchRole(menuGroup.role)">
+                <div ng-repeat="menu in menuGroup.content">
+                    <a id="{{menu.state}}LeftMenuItem" ng-if="!menu.items" ui-sref="{{::menu.state}}"  ng-class="{'nav-active' : menu.state == left.menuState}" class="accordion-toggle" style="display:block"
+                       ng-click="left.closeAll();">
+                        <i class="{{::menu.iconClass}}"></i>&nbsp;&nbsp;
+                        <span ng-hide="left.settings.navCollapsedMin" class="menuTextColor">{{::menu.name}}</span>
+                    </a>
+              
+                        <uib-accordion-group ng-if="menu.items" heading="{{::menu.name}}" id="{{menu.name}}" template-url="group-template.html"
+                                         is-open="menu.open">
+                                    
+                        <uib-accordion-heading id="{{menu.name}}">
+                            <i class="{{menu.iconClass}}"></i>&nbsp;&nbsp;
+                            <span ng-hide="left.settings.navCollapsedMin" class="menuTextColor" name="{{::menu.name}}">{{menu.name}}</span>
+                        </uib-accordion-heading>
+                        <ul>
+                            <li ng-repeat="item in menu.items">
+                                <a id="{{item.state}}LeftMenuItem" ui-sref="{{item.state}}"  ng-class="{'nav-active' : item.state == left.menuState}">
+                                    <label class="menuTextColor subMenuLeftMargin">{{item.name}}</label>
+                                </a>
+                            </li>
+                        </ul>
+                    </uib-accordion-group>
+                    <div class="divider"></div>
+                </div>
+            </div>
+        </div>
+    </uib-accordion>
+</div>
+
