@@ -11,9 +11,6 @@ import com.mars.repository.RoleEntityRepository;
 import com.mars.repository.entity.RoleEntity;
 import com.mars.util.ErrorMessagesConstant;
 
-/**
- * Copyright (c) 2016 IPC Systems, Inc. Created by Viktor Bondarenko on 12/16/2016.
- */
 @Service
 public class RoleServiceImpl extends AbstractServiceImpl implements RoleService
 {

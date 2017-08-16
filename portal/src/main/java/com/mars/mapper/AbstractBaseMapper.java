@@ -3,10 +3,6 @@ package com.mars.mapper;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Copyright (c) 2016 IPC Systems, Inc. Created by Ratnesh Srivastava 
- */
-
 public abstract class AbstractBaseMapper<Entity, Model> implements BaseMapper<Entity, Model>
 {
     @Override

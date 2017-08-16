@@ -11,9 +11,6 @@ import com.mars.repository.ProductRepository;
 import com.mars.repository.entity.ProductEntity;
 import com.mars.util.ErrorMessagesConstant;
 
-/**
- * Copyright (c) 2017 IPC Systems, Inc. Created by Viktor Bondarenko on 1/23/2017.
- */
 @Service
 public class ProductServiceImpl extends AbstractServiceImpl implements ProductService
 {

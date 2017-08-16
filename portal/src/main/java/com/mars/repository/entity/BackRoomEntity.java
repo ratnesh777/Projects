@@ -13,10 +13,6 @@ import javax.persistence.UniqueConstraint;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-/**
- * Copyright (c) 2016 IPC Systems, Inc. Created by Ratnesh Srivastava
- */
-
 @Data
 @EqualsAndHashCode(exclude={"company", "users"})
 @Entity

@@ -1,9 +1,8 @@
 
-/*INSERT INTO role (id, name) VALUES (1, 'IPC Operations Admin'), (2, 'IPC Operations User'), (3, 'Manufacturing'), (4, 'Customer Admin'), (5, 'Customer End User');*/
-INSERT INTO role (id, name) VALUES (1, 'IPC Operations Admin'), (2, 'IPC Operations User'), (3, 'Customer End User');
+INSERT INTO role (id, name) VALUES (1, 'Operations Admin'), (2, 'Operations User'), (3, 'Customer End User');
 
-INSERT INTO company(id,name) VALUES (1,'IPC Systems');
+INSERT INTO company(id,name) VALUES (1,'MARS Systems');
 
-/* password : ipcdefaultopsuser */
+/* password : Welcome12# */
 INSERT INTO user (id,email,firstName,lastName,status,company_id,role_id,password, site_id) VALUES
-        (1,'defaultunigy360opsuser@ipc.com','defaultopsuserfirstname','defaultopsuserlastname','REGISTERED',1,1,'$2a$10$D64KDU9FFb7F7UpBzKOnFO6bTsbLKHCzwKzh0tT9IwrDfgqi4Sw1O', 'site_id');
+        (1,'admin@mars.com','firstname','lastname','REGISTERED',1,1,'$2a$10$CdZpXJ0WJac0nE8RMvppOupZy1rmjIM5VAwytl0I9NiJen84Ue.Wm', 'site_id');

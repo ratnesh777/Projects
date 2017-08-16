@@ -2,11 +2,6 @@ package com.mars.mapper;
 
 import java.util.List;
 
-/**
- * Copyright (c) 2016 IPC Systems, Inc. Created by Ratnesh Srivastava
- *
- * Base interface for all mappers
- */
 public interface BaseMapper<Entity, Model>
 {
 

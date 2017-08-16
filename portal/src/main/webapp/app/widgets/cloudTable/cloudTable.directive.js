@@ -2,9 +2,9 @@
     /**
      * To use:
      *
-     * <ipc-table dataurl="/api/alertsTable"
+     * <table dataurl="/api/alertsTable"
      * table-features="ui-grid-pagination,ui-grid-selectors"
-     * table-options="{data:[]}"></ipc-table>
+     * table-options="{data:[]}"></table>
      *
      * Alternatively, if the data is retrieved from within the parent
      * controller, have the parent controller set the gridOptions.data

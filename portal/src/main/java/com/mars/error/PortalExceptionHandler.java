@@ -26,9 +26,6 @@ import com.mars.exception.PortalServiceParameterException;
 import com.mars.exception.ResourceNotFoundException;
 import com.mars.util.ErrorMessagesConstant;
 
-/**
- * Copyright (c) 2016 IPC Systems, Inc. Created by Ratnesh Srivastava
- */
 
 @ControllerAdvice
 public class PortalExceptionHandler extends ResponseEntityExceptionHandler

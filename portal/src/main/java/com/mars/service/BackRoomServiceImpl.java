@@ -18,9 +18,6 @@ import com.mars.repository.BackRoomRepository;
 import com.mars.repository.entity.BackRoomEntity;
 import com.mars.util.ErrorMessagesConstant;
 
-/**
- * Copyright (c) 2017 IPC Systems, Inc. Created by Viktor Bondarenko on 1/3/2017.
- */
 @Service
 public class BackRoomServiceImpl extends AbstractServiceImpl implements BackRoomService
 {

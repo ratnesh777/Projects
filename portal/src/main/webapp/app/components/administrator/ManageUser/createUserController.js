@@ -1,7 +1,3 @@
-/**
- * Copyright (c) 2017 IPC Systems, Inc.
- * Created by Viktor Bondarenko on 1/6/2017.
- */
 (function () {
     angular.module('manageUser').controller('createUserController',
         createUserController);
@@ -89,7 +85,7 @@
             console.log(cuc.user.role);
             if (cuc.user.role.id == 1){
                 cuc.user.company = cuc.companies[0];
-                cuc.user.siteId = "IPC";
+                cuc.user.siteId = "MARS";
             }
         }
 

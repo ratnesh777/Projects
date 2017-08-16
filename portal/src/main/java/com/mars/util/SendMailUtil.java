@@ -20,9 +20,6 @@ import com.mars.exception.PortalException;
 import freemarker.template.Configuration;
 
 
-/**
- * Copyright (c) 2017 IPC Systems, Inc. Created by Amit Kumar on 1/19/2017.
- */
 @Component
 public class SendMailUtil {
 	@Autowired
@@ -37,9 +34,9 @@ public class SendMailUtil {
 	@Value("${base.path.uri}")
     private String BASE_PATH_URI;
 
-	private static ClassPathResource IPC_LOGO = new ClassPathResource("template/ipc-logo.png");
+	private static ClassPathResource COMPANY_LOGO = new ClassPathResource("template/company-logo.png");
 
-	public String sendEmailwithIPCLogo(String from, String to, String subject,
+	public String sendEmailwithCompanyLogo(String from, String to, String subject,
 									 String freeMarkerHTMLTemplate,
 									 HashMap<String, Object> freeMarkerHTMLTemplateParameterMap)
 	{
@@ -60,7 +57,7 @@ public class SendMailUtil {
 										freeMarkerHTMLTemplateParameterMap)
 					);
 					helper.setText(content.toString(), true);
-					helper.addInline("logo", IPC_LOGO);
+					helper.addInline("logo", COMPANY_LOGO);
 				} catch (Exception e) {
 					throw new PortalException(e);
 				}

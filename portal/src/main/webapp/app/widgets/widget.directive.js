@@ -17,7 +17,7 @@
             },
             bindToController: true,
             link: function ($scope, $element, $attrs) {
-                var type = $scope.WidgetCtrl.type = $attrs.type || 'ipc-chart';
+                var type = $scope.WidgetCtrl.type = $attrs.type || 'mars-chart';
                 var widgetDirectiveString = '<' + type;
                 if ($scope.WidgetCtrl.dataurl) {
                     widgetDirectiveString += ' dataurl="' + $scope.WidgetCtrl.dataurl + '"';

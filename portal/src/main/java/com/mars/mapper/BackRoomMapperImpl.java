@@ -9,9 +9,6 @@ import org.springframework.stereotype.Service;
 import com.mars.models.BackRoom;
 import com.mars.repository.entity.BackRoomEntity;
 
-/**
- * Copyright (c) 2017 IPC Systems, Inc. Created by Viktor Bondarenko on 1/3/2017.
- */
 @Service
 public class BackRoomMapperImpl extends AbstractBaseMapper<BackRoomEntity, BackRoom>
         implements BackRoomMapper

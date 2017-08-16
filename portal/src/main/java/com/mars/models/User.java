@@ -12,9 +12,6 @@ import org.hibernate.validator.constraints.NotBlank;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.mars.repository.entity.UserStatus;
 
-/**
- * Copyright (c) 2016 IPC Systems, Inc. Created by Ratnesh Srivastava
- */
 
 @Data
 @JsonInclude(value = JsonInclude.Include.NON_NULL)

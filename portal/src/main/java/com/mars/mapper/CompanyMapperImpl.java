@@ -6,10 +6,6 @@ import org.springframework.stereotype.Service;
 import com.mars.models.Company;
 import com.mars.repository.entity.CompanyEntity;
 
-/**
- * Copyright (c) 2016 IPC Systems, Inc. Created by Ratnesh Srivastava
- */
-
 @Service
 public class CompanyMapperImpl extends AbstractBaseMapper<CompanyEntity, Company> implements CompanyMapper {
 

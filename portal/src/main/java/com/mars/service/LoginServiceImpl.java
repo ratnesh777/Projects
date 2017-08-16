@@ -22,10 +22,6 @@ import com.mars.repository.entity.UserStatus;
 import com.mars.util.ErrorMessagesConstant;
 import com.mars.util.SendMailUtil;
 
-/**
- * Copyright (c) 2016 IPC Systems, Inc. Created by Ratnesh Srivastava 
- */
-
 @Service
 public class LoginServiceImpl implements LoginService{
 

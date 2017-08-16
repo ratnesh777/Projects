@@ -2,10 +2,6 @@ package com.mars.exception;
 
 import org.apache.commons.lang3.exception.ContextedRuntimeException;
 
-/**
- * Copyright (c) 2016 IPC Systems, Inc. Created by Ratnesh Srivastava
- */
-
 public class PortalException extends ContextedRuntimeException
 {
 

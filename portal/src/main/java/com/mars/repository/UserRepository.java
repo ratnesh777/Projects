@@ -6,9 +6,6 @@ import org.springframework.stereotype.Repository;
 
 import com.mars.repository.entity.UserEntity;
 
-/**
- * Copyright (c) 2016 IPC Systems, Inc. Created by Ratnesh Srivastava
- */
 
 @Repository
 public interface UserRepository extends JpaRepository<UserEntity, Integer>

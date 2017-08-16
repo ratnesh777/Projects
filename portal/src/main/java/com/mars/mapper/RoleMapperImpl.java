@@ -8,10 +8,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * Copyright (c) 2016 IPC Systems, Inc.
- * Created by Viktor Bondarenko on 12/15/2016.
- */
 @Service
 public class RoleMapperImpl extends AbstractBaseMapper<RoleEntity, Role> implements RoleMapper {
     @Override

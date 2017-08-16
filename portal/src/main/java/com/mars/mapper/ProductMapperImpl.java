@@ -6,9 +6,6 @@ import org.springframework.stereotype.Service;
 import com.mars.models.Product;
 import com.mars.repository.entity.ProductEntity;
 
-/**
- * Copyright (c) 2017 IPC Systems, Inc. Created by Viktor Bondarenko on 1/23/2017.
- */
 @Service
 public class ProductMapperImpl extends AbstractBaseMapper<ProductEntity, Product>
         implements ProductMapper

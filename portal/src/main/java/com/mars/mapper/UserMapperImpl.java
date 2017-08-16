@@ -7,10 +7,6 @@ import org.springframework.stereotype.Service;
 import com.mars.models.User;
 import com.mars.repository.entity.UserEntity;
 
-/**
- * Copyright (c) 2016 IPC Systems, Inc. Created by Ratnesh Srivastava
- */
-
 @Service
 public class UserMapperImpl extends AbstractBaseMapper<UserEntity, User> implements UserMapper
 {

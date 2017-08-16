@@ -10,9 +10,6 @@ import lombok.Data;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-/**
- * Copyright (c) 2016 IPC Systems, Inc. Created by Viktor Bondarenko on 12/15/2016.
- */
 @Data
 @JsonInclude(value = JsonInclude.Include.NON_EMPTY)
 public class BackRoom
