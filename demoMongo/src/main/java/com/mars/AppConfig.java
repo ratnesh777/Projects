@@ -4,6 +4,7 @@ import javax.naming.NamingException;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,13 +16,14 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.ui.freemarker.FreeMarkerConfigurationFactoryBean;
 import org.springframework.web.client.RestTemplate;
 
+import com.mars.mongodb.MongodbClusterListener;
 import com.mongodb.MongoClient;
+import com.mongodb.MongoClientOptions;
+import com.mongodb.ServerAddress;
 
 
 @Configuration
@@ -47,15 +49,23 @@ public class AppConfig
     private String databasePort;
 
     Logger logger = LogManager.getLogger();
+    
+    @Autowired
+    private MongodbClusterListener mongodbClusterListener;
 
     @Bean(name = "mongoDbFactory")
     public MongoDbFactory mongoDbFactory() throws Exception
     {
         logger.info("Instantiating mongo database configuration");
+        ServerAddress serverAddress = new ServerAddress(databaseHost, Integer.parseInt(databasePort.trim()));
+        MongoClientOptions options = MongoClientOptions.builder()
+                .addClusterListener(mongodbClusterListener)
+                .build();
         return new SimpleMongoDbFactory(
-                new MongoClient(databaseHost, Integer.parseInt(databasePort.trim())), databaseName);
+                new MongoClient(serverAddress, options), databaseName);
        
     }
+    
 
     @Bean(name = "mongoTemplate")
     public MongoTemplate mongoTemplate() throws Exception

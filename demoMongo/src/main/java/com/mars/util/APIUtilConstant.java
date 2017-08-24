@@ -17,6 +17,7 @@ public class APIUtilConstant
     public static final String ENDPOINT_API_END_POINT = "/api/endpoint";
     public static final String PING_USER_API_END_POINT = "/api/ping/user";
     public static final String TICKET_API_END_POINT = "/api/ticket";
+    public static final String MONITORING_API_END_POINT = "/api/monitoring";
 
     // swagger documentation API definition
     public static final String SWAGGER_COMPANY_API = "Customer APIs Detail";
@@ -29,6 +30,8 @@ public class APIUtilConstant
     public static final String SWAGGER_TICKET_API = "Ticket APIs Detail";
     
     public static final String SWAGGER_PING_CONTEXT_API = "Ping Context APIs Detail";
+    
+    public static final String SWAGGER_MONITORING_API = "Monitoring APIs Detail";
    
 
 }
