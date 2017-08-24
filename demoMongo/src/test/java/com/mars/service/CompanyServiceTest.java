@@ -157,8 +157,8 @@ public class CompanyServiceTest extends AbstractTest
     	Customer  company1  = getCompanyModel();
     	Customer  company  = new Customer();
     	company.setId("1001001");
-        company.setName("IPC-TEST");
-        company.setEmailDomain("@ipc.com");
+        company.setName("MARS-TEST");
+        company.setEmailDomain("@mars.com");
 
         List<Customer> companyList=new ArrayList<>();
         companyList.add(company);

@@ -40,8 +40,8 @@ public class CompanyControllerTest extends AbstractControllerTest
     {
 
         Customer company = new Customer();
-        company.setName("IPC POLICY");
-        company.setEmailDomain("@ipc.com");
+        company.setName("Mars POLICY");
+        company.setEmailDomain("@mars.com");
         
 
         MvcResult mvcResult = mockMvc
@@ -62,7 +62,7 @@ public class CompanyControllerTest extends AbstractControllerTest
     {
         Customer company = new Customer();
         company.setId("2000");
-        company.setEmailDomain("@ipc.com");
+        company.setEmailDomain("@mars.com");
         
 
         mockMvc.perform(MockMvcRequestBuilders.post(APIUtilConstant.COMPANY_API_END_POINT)
@@ -292,7 +292,7 @@ public class CompanyControllerTest extends AbstractControllerTest
     public void searchCompany() throws Exception
     {
         mockMvc.perform(MockMvcRequestBuilders.get(APIUtilConstant.COMPANY_API_END_POINT)
-                .param("searchKey", "IPC-TEST").contentType(MediaType.APPLICATION_JSON))
+                .param("searchKey", "MARS-TEST").contentType(MediaType.APPLICATION_JSON))
                 .andDo(print()).andExpect(status().isOk())
                 .andExpect(jsonPath("$.totalPages", is(1)))
                 .andExpect(jsonPath("$.totalElements", is(1)))
@@ -304,7 +304,7 @@ public class CompanyControllerTest extends AbstractControllerTest
                 .andExpect(jsonPath("$.content", hasSize(1)))
                 .andExpect(jsonPath("$.content[0].*", hasSize(2)))
                 .andExpect(jsonPath("$.content[0].id", is("1001")))
-                .andExpect(jsonPath("$.content[0].name", is("IPC-TEST")));
+                .andExpect(jsonPath("$.content[0].name", is("MARS-TEST")));
     }
 
     
