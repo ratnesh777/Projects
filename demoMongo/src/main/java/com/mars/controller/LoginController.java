@@ -19,6 +19,7 @@ import com.mars.error.ErrorResource;
 import com.mars.exception.InvalidRequestException;
 import com.mars.models.Login;
 import com.mars.mongo.repository.entity.User;
+import com.mars.security.SecurityUtils;
 import com.mars.security.UserDetailsService;
 import com.mars.service.LoginService;
 import com.mars.util.APIUtilConstant;
