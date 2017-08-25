@@ -49,6 +49,9 @@ public class User implements UserDetails
     @Getter(AccessLevel.NONE)
     @Setter(AccessLevel.NONE)
     private String email;
+    
+
+    private String emailId;
 
     private String password;
 

@@ -1,0 +1,101 @@
+<div class="container-fluid" style="min-height: 100%;min-height: 100vh;display: flex;align-items: center">	
+	<div class="row vertical-center-row">
+		<div
+			class="col-lg-offset-3 col-md-12 col-lg-10 col-sm-12 col-xs-12 container-fluid"
+			style="display: inline-flex; clear: both;">
+			<div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 container-fluid"
+				style="background-color: #283583; box-shadow: 4px 4px 10px 1px #999;">
+				<div style="text-align: center">
+					<label style="font-size: 72px; color: #fff; padding-top: 5%;">Test
+						Portal</label>
+				</div>
+				<label style="font-size: 16px; color: #fff"></label>
+				<div style="text-align: center">
+					<label style="padding-top: 40%; font-size: 16px; color: #999999">Copyright
+						{{auth.year}} @ Mars</label>
+				</div>
+			</div>
+			<div
+				class="col-md-6 col-lg-6 col-sm-6 col-xs-6 container container-fluid"
+				style="background-color: #fff; box-shadow: 4px 4px 10px 1px #999;">
+				<div class="col-md-12 form-group" style="text-align: center">
+				<!-- 	<img class="img logoWidth" src="/portal/app/img/new_logo.png"
+						align="middle"
+						style="width: 25%; padding-top: 25px; position: relative; border-radius: 67px;"> -->
+				</div>
+				<div class="col-md-12" style="padding: 0px">
+
+					<form name="auth.loginForm" class="loginForm">
+						<div class="form-group col-sm-offset-2 col-sm-8">
+							<div class="row">
+
+								<label class="loginFormFonts">Email</label> <input id="user"
+									tabindex="1" name="email" type="email" class="form-control "
+									ng-model="auth.credentials.email"
+									ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/"
+									placeholder="Enter Email"
+									ng-class="{errorColor: userError==true}" ng-focus="auth.msg=''">
+
+							</div>
+						</div>
+						<div class="form-group col-sm-offset-2 col-sm-8">
+
+							<div class="row">
+								<label class="loginFormFonts">Password</label> <input
+									id="passwd" tabindex="1" name="password" type="password"
+									class="form-control " ng-model="auth.credentials.password"
+									ng-keypress="auth.keypress($event)"
+									placeholder="Enter Password"
+									uib-popover="{{auth.msg}}" popover-placement="right"
+									popover-is-open="auth.isOpen" popover-class="loginPopover" ng-blur="auth.msg=''"
+									ng-class="{errorColor: userError==true}" ng-focus="auth.msg=''">
+
+							</div>
+						</div>
+
+						<div class="form-group col-xs-offset-2 col-xs-8">
+							<div class="row" style="padding-bottom: 8px">
+								<!-- <div class="col-sm-12 col-xs-12 col-lg-6 col-md-6"
+									style="padding-left: 0px; margin-bottom: 8px;">
+ -->
+								<label class="control-label loginFormFonts" style="cursor: pointer" ng-click="auth.rememberUser = !auth.rememberUser">Remember me
+								</label> <input type="checkbox" name="remember" id="remember"
+									style="float: left; margin-left: 1px;margin-top: 5px;cursor: pointer" ng-model="auth.rememberUser">
+								<!-- </div> -->
+								<!-- <div class="col-sm-12 col-xs-12 col-lg-6 col-md-6"
+									style="padding: 0px; margin-bottom: 8px;"> -->
+								<a id="forgotPassLink" class="forgotPassLink loginFormFonts"
+									style="float: right;" ui-sref="forgotPass">Reset Password?
+								</a>
+								<!-- </div> -->
+							</div>
+						</div>
+						<div class="form-group col-sm-offset-6 col-sm-4" style="padding: 0px">
+							<a class="loginImageContainer" href="#"> 
+							<img
+								id="loginButton" class="loginButton"
+								ng-mouseleave="auth.msg=''"
+								src="/demoMongo/app/img/arrow-blue.png"> 
+							<img
+								id="loginButton" class="loginButton"
+								src="/demoMongo/app/img/arrow-blue.png"
+								id="loginButton"
+								ng-click="auth.login()">
+							</a>
+							<!-- <span class="glyphicon glyphicon-arrow-right" id="arrowGlyphicon" class="arrowGlyphicon" style="float:right;border: 5px solid black;
+    border-radius: 30px;
+    height: 50px;
+    width: 50px;
+    font-size: 30px;"></span> -->
+							<label style="float: right; padding-top: 10%;margin-right: 2px;"
+								class="loginFormFonts">LOGIN</label>
+						</div>
+					</form>
+				</div>
+
+
+			</div>
+		</div>
+		<!-- <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1"></div> -->
+	</div>
+</div>
