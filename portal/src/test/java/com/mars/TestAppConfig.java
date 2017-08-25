@@ -35,14 +35,16 @@ public class TestAppConfig
 
     private DatabasePopulator databasePopulator() {
         ResourceDatabasePopulator resourceDatabasePopulator = new ResourceDatabasePopulator();
-        Resource script = new FileSystemResource("src/test/resources/populateDB.sql");
+       // Resource script = new FileSystemResource("src/test/resources/populateDB.sql");
+        Resource script = new FileSystemResource("C:\\ratnesh\\Projects\\portal\\src\\test\\resources\\populateDB.sql");
         resourceDatabasePopulator.addScript(script);
         return resourceDatabasePopulator;
     }
 
     private DatabasePopulator databaseCleaner() {
         ResourceDatabasePopulator resourceDatabasePopulator = new ResourceDatabasePopulator();
-        Resource script = new FileSystemResource("src/test/resources/cleanUp.sql");
+        //Resource script = new FileSystemResource("src/test/resources/cleanUp.sql");
+        Resource script = new FileSystemResource("C:\\ratnesh\\Projects\\portal\\src\\test\\resources\\cleanUp.sql");
         resourceDatabasePopulator.addScript(script);
         return resourceDatabasePopulator;
     }

@@ -44,7 +44,7 @@
         self.isLoggedIn = isLoggedIn;
         self.rememberUser=false;
         self.clearPassword='';
-        self.previousAttempted={ emailId : ''};
+        self.previousAttempted={ email : ''};
         self.init = init;
         self.msg="";
         self.isOpen = false;
@@ -142,12 +142,12 @@
                     }
                     break;
                 case 401:
-                	if(self.previousAttempted.emailId ==='' || self.previousAttempted.emailId === self.credentials.emailId){
+                	if(self.previousAttempted.email ==='' || self.previousAttempted.email === self.credentials.emailId){
                 		self.loginAttemptCount++;	
-                		self.previousAttempted.emailId = self.credentials.emailId;
+                		self.previousAttempted.email = self.credentials.email;
                 	}else{
                 		self.loginAttemptCount = 0;
-                		self.previousAttempted.emailId = self.credentials.emailId;
+                		self.previousAttempted.email= self.credentials.email;
                 		self.commonErrorText='';
                 	}
                 	if(self.loginAttemptCount <= 4)
