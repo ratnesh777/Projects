@@ -19,6 +19,7 @@ import com.mars.error.ErrorResource;
 import com.mars.exception.InvalidRequestException;
 import com.mars.models.Login;
 import com.mars.mongo.repository.entity.User;
+import com.mars.security.UserDetailsService;
 import com.mars.service.LoginService;
 import com.mars.util.APIUtilConstant;
 import com.mars.util.ErrorMessagesConstant;
@@ -39,6 +40,9 @@ public class LoginController
 
     @Autowired
     public LoginService loginService;
+    
+    @Autowired
+    UserDetailsService userDetailsService;
 
     @ApiOperation(value = "Users authentication by emailId and password", response = Login.class)
     @ApiResponses(value = { @ApiResponse(code = 200, message = "OK", response = Login.class),
@@ -69,8 +73,8 @@ public class LoginController
     @RequestMapping(method = RequestMethod.GET, path = "/security/account", produces = "application/json")
     public @ResponseBody Map<String, Object> loggedInAccount()
     {
-    	 User user = null;
-    //    User user = (User) userDetailsService.loadUserByUsername(SecurityUtils.getCurrentLogin());
+    	 //User user = null;
+         User user = (User) userDetailsService.loadUserByUsername(SecurityUtils.getCurrentLogin());
         Map<String, Object> userInfo = new HashMap<String, Object>();
         userInfo.put("email", user.getUsername());
         userInfo.put("role", user.getRole().getId());
