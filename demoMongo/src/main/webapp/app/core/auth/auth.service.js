@@ -40,16 +40,35 @@
         this.currentUser = {};
         this.deleteCookies = deleteCookies;
         this.isAuthenticated = isAuthenticated;
-		 this.sendEmail = sendEmail;
+	    this.sendEmail = sendEmail;
+		this.checkAuthentication = checkAuthentication;
+        this.retrieveLogin = retrieveLogin;
         console.log("isLocked :: "+ this.isLocked);
         
-        if(self.isLocked){
+        if(!self.isLocked){
+        	self.retrieveLogin().then(retrievedSuccess,retrievedFailure);
+        } else{
         	var storedUser = localStorage.getItem('rememberedUser');
         	if(storedUser){
         		self.rememberedUser = JSON.parse(localStorage.getItem('rememberedUser'));
         	}
-        }
+    	}
         
+/*        $rootScope.$on(AUTH_EVENTS.checkAuthentication, function () {
+            self.checkAuthentication();
+        });*/  
+        
+        function checkAuthentication(){
+        	if (!self.isLocked && self.currentUser.username !== localStorage.getItem('portalCurrentUser')) {
+        		$location.path('/logout').replace();
+        		$window.location.reload();
+	    	}
+        }
+      
+        function retrievedFailure(){
+        	self.locked=true;
+        	self.currentUser={};
+        }
         
         /**
          * @description Sends credentials to server, records user, alerts application
@@ -57,12 +76,16 @@
          * @requires restService
          * @param {object} credentials
          */
-        function login (credentials) {
-        	
-        	console.log(credentials);
-        	 self.credentialValue=angular.copy(credentials);
-             self.credentialValue.password = "";
-             localStorage.setItem('rememberedUser', JSON.stringify(self.credentialValue));
+        function login (credentials, rememberMeFlag) {
+        	self.rememberMe = rememberMeFlag;
+        	 if(rememberMeFlag){
+                 self.credentialValue=angular.copy(credentials);
+                 self.credentialValue.password = "";
+                 localStorage.setItem('rememberedUser', JSON.stringify(self.credentialValue));
+	            }
+	           else{
+	        	   localStorage.setItem('rememberedUser', '');
+	           }
              
 			return restService
 			.add(self.endpoints.login, credentials)
@@ -111,6 +134,7 @@
             }
         }
         
+
         
         /**
          * @description Unsets currentUser and removes localStorage property
@@ -125,6 +149,8 @@
         	}
         	return res;
         }
+        
+       
         /**
          * @description Logs user out, removes user, alert application
          * @memberof AuthService
@@ -134,10 +160,8 @@
         function logout () {
             self.isLocked = true;
             $rootScope.logoutClicked=true;
-            return restService
-                .get(self.endpoints.logout)
-                .then(removeUser)
-                .then(success, removeUser);
+            var storedUser = localStorage.getItem('rememberedUser');
+            return restService.get(self.endpoints.logout).then(removeUser).then(success, removeUser);
         }
     
        
@@ -145,7 +169,6 @@
         	restService
             .get(self.endpoints.logout).then(function(resp){
             	localStorage.setItem('portalCurrentUser', '');
-            	localStorage.setItem('portalCurrentUserRole', '');//TODO will update after spring-security integration
             })
         }
         

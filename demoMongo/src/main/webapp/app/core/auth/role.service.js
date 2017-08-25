@@ -66,13 +66,13 @@
         function checkAuthorization (authorizedRoles, event) {
           
         	if (!AuthService.currentUser || !AuthService.currentUser.email) {
-        		console.log("Inside checkAuthorization..."+AuthService.currentUser + " & localStorage.getItem('portalCurrentUserRole')::"+ localStorage.getItem('portalCurrentUserRole'));
+        	/*	console.log("Inside checkAuthorization..."+AuthService.currentUser + " & localStorage.getItem('portalCurrentUserRole')::"+ localStorage.getItem('portalCurrentUserRole'));
         		
         		AuthService.currentUser.role = localStorage.getItem('portalCurrentUserRole');//TODO will update after spring-security integration and will fix by calling retrieveLogin() method 
         		AuthService.isLocked = false;
-        		setRoles(authorizedRoles);
+        		setRoles(authorizedRoles);*/
             	
-          /*  	AuthService.retrieveLogin().then(function(resp){
+            	AuthService.retrieveLogin().then(function(resp){
             		if(resp.data && resp.data.emailId && resp.data.role){
             			AuthService.currentUser = resp.data;
             			AuthService.isLocked = false;
@@ -81,7 +81,7 @@
             		}else{
             			 notAuthorized(event);
             		}
-            	},AuthService.logout);*/
+            	},AuthService.logout);
             }
         }
         

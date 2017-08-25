@@ -41,7 +41,7 @@
                     initOptions.enableHorizontalScrollbar = 0;
                     initOptions.enablePagination;
                     initOptions.enablePaginationControls;
-                    initOptions.paginationTemplate = '/portal/app/widgets/cloudTable/pagination.template.html'
+                    initOptions.paginationTemplate = '/demoMongo/app/widgets/cloudTable/pagination.template.html'
                     return initOptions;
                 };
                 return gridOptions;
@@ -52,7 +52,7 @@
     
     function cloudTable () {
         return {
-            templateUrl: '/portal/app/widgets/cloudTable/table.template.html',
+            templateUrl: '/demoMongo/app/widgets/cloudTable/table.template.html',
             controller: CloudTableController,
             controllerAs: 'tableCtrl',
             bindToController: true,

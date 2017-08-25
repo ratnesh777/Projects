@@ -11,7 +11,9 @@
         return {
         	contextVal: contextVal,
             login: contextVal + '/api/login/authenticate',
-            logout: contextVal + '/api//logout',
+           // logout: contextVal + '/logout',
+            retrieveLoggedInUser : contextVal+'/api/login/security/account',
+            logout: contextVal + '/api/logout',
             userUrl: contextVal + "/api/user",
             companyUrl: contextVal + "/api/company",
             resetPass : contextVal+"/api/login/resetPassword",

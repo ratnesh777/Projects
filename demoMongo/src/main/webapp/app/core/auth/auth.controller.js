@@ -64,7 +64,7 @@
         
         
         
-        function init(){
+/*        function init(){
         	var date = new Date();
         	self.year = date.getFullYear();
         	self.currentUser = AuthService.currentUser;
@@ -85,6 +85,21 @@
         	}
         	console.log("self.rememberUser ::" + self.rememberUser);
  
+        }*/
+        
+        function init(){
+        	var date = new Date();
+        	self.year = date.getFullYear();
+        	self.currentUser = AuthService.currentUser;
+        	if(AuthService.rememberMe &&(AuthService.rememberedUser && AuthService.rememberedUser.email)){
+        		self.credentials.email = AuthService.rememberedUser.email;
+        		self.credentials.password = "";
+       		 	self.rememberUser = true;
+        	}else{
+        		self.rememberUser = false;
+        	}
+        	console.log("self.rememberUser ::" + self.rememberUser);
+ 
         }
         
         /**
@@ -93,7 +108,8 @@
          * @param {object} credentials Credentials populated by form ng-model directives
          */
         function login () {
-        	AuthService.login(self.credentials);
+        	//AuthService.login(self.credentials);
+        	 AuthService.login(self.credentials, self.rememberUser);
         }
         
         function keypress($event){
