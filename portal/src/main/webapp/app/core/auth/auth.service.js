@@ -99,7 +99,7 @@
             if (angular.isObject(res.data)) {
                 self.isLocked = false;
                 $rootScope.$broadcast(AUTH_EVENTS.login, res);
-                localStorage.setItem('portalCurrentUser', res.data.email);
+                localStorage.setItem('portalCurrentUser', res.data.emailId);
                 localStorage.setItem('portalCurrentUserRole', res.data.role);//TODO will update after spring-security integration
                 
             } else {

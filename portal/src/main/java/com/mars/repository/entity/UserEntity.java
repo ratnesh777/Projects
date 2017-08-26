@@ -1,6 +1,5 @@
 package com.mars.repository.entity;
 
-import java.util.Collection;
 import java.util.Date;
 import java.util.Set;
 
@@ -17,11 +16,6 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -31,7 +25,7 @@ import lombok.EqualsAndHashCode;
 @Entity
 @Table(name = "user", uniqueConstraints = @UniqueConstraint(name = "email_UniqueConstraint", columnNames = {
         "email" }) )
-public class UserEntity extends AbstractEntity implements UserDetails
+public class UserEntity extends AbstractEntity
 {
 
     @Column(nullable = false)
@@ -42,9 +36,6 @@ public class UserEntity extends AbstractEntity implements UserDetails
 
     @Column(nullable = false)
     private String email;
-    
-    @JsonIgnore
-    private String emailId;
 
     @Column(nullable = false)
     private String password;
@@ -77,45 +68,4 @@ public class UserEntity extends AbstractEntity implements UserDetails
     
     @Column(name = "passwd_token", nullable = true)
     private String passwordToken;
-    
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities()
-    {
-        return null;
-    }
-
-    @Override
-    @JsonIgnore
-    public String getUsername()
-    {
-        return email;
-    }
-
-    @Override
-    @JsonIgnore
-    public boolean isAccountNonExpired()
-    {
-        return true;
-    }
-
-    @Override
-    @JsonIgnore
-    public boolean isAccountNonLocked()
-    {
-        return true;
-    }
-
-    @Override
-    @JsonIgnore
-    public boolean isCredentialsNonExpired()
-    {
-        return true;
-    }
-
-    @Override
-    @JsonIgnore
-    public boolean isEnabled()
-    {
-        return true;
-    }
 }
