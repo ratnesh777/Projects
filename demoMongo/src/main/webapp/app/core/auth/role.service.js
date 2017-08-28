@@ -73,11 +73,11 @@
         		setRoles(authorizedRoles);*/
             	
             	AuthService.retrieveLogin().then(function(resp){
-            		if(resp.data && resp.data.emailId && resp.data.role){
+            		if(resp.data && resp.data.email && resp.data.role){
             			AuthService.currentUser = resp.data;
             			AuthService.isLocked = false;
             			setRoles(authorizedRoles);
-                        checkRole(event);
+                        //checkRole(event);
             		}else{
             			 notAuthorized(event);
             		}
